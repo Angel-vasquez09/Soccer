@@ -1,0 +1,11 @@
+
+
+.equipos, .futbolistas{
+    cursor: pointer;
+}
+
+.activo{
+    border-bottom: 1px solid black !important;
+    color: black !important;
+}
+/* --- CONTENEDOR DEL FORMULARIO DE LOGIN --- */
