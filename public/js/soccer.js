@@ -3,7 +3,7 @@ let datosAdmin = null; // DATOS DEL ADMIN LOGUEADO
 // VERIFICAR QUE EL QUE ENTRE SEA UN ADMINISTRADOR LOGUEADO
 var url = (window.location.hostname.includes('localhost'))
 ? 'http://localhost:8080/'
-: 'http://localhost:8080/';
+: 'https://app-socce.herokuapp.com/';
 
 const linkFutb = document.querySelector(".futbolistas");
 const linkEqui = document.querySelector(".equipos");

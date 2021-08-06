@@ -3,7 +3,7 @@ let datosAdmin = null; // DATOS DEL ADMINISTRADOR LOGUEADO
 
 var url = (window.location.hostname.includes('localhost'))
 ? 'http://localhost:8080/'
-: 'http://localhost:8080/';
+: 'https://app-socce.herokuapp.com/';
 
 const formularioLogin = document.querySelector("#formularioLogin");
 
