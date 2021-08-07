@@ -268,7 +268,7 @@ const modalForm = document.querySelector("#formx");
             </div>
             <div class="mb-3">
                 <select class="form-select form-select-sm" id="positionAdd" name="positionAdd" aria-label=".form-select-sm example" required>
-                    <option value="ataque" >Ataque</option>
+                    <option value="delantero" >Ataque</option>
                     <option value="medio"  >Medio</option>
                     <option value="defensa">Defensa</option>
                 </select>
@@ -575,7 +575,7 @@ const position   = document.querySelector("#consultar-position");
             <tr>
                 <th class="text-center"> ${ datos.id           } </th>
                 <td class="text-center"> ${ datos.name         } </td>
-                <td class="text-center"> ${ datos.Equipo.nombre} </td>
+                <td class="text-center"> ${ datos.equipo.nombre} </td>
                 <td class="text-center"> ${ datos.squad_number } </td>
                 <td class="text-center"> ${ datos.position     } </td>
                 <td class="text-center"> ${ datos.nationality  } </td>

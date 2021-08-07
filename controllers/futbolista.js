@@ -9,7 +9,7 @@ const   Equipo = require("../models/equipo");
 // OBTENER TODOS LOS FUTBOLISTAS
 const getFutbolistas = async(req,res = response) => {
 
-    const futbolistas = await Futbolista.findAll({include: 'Equipo'});
+    const futbolistas = await Futbolista.findAll({include: 'equipo'});
 
     try {
 
@@ -29,7 +29,7 @@ const getFutbolista = async(req, res = response) => {
     
     try {
         
-        const futbolista = await Futbolista.findOne({include: 'Equipo',where: { id }});
+        const futbolista = await Futbolista.findOne({include: 'equipo',where: { id }});
         return res.json({
             futbolista
         })
@@ -117,14 +117,15 @@ const consultaPosition = async(req, res = response) => {
 
     try {
         
-        const jugadores = await Futbolista.findOne({include: 'Equipo', where: 
+        const jugadores = await Futbolista.findOne({include: 'equipo', where: 
                 {   
-                    [Op.and]: [{name: {[Op.like]: '%'+nombre+'%'}},{position}]
+                    [Op.and]: [{name: {[Op.like]: '%'+nombre+'%'}}, {position}]
                 }
             });
 
         if(!jugadores){
             return res.json({
+                position,
                 msg: "No coinciden"
             })
         }
@@ -159,11 +160,10 @@ const equipoJugadores = async(req, res = response) => {
 const playerPais = async(req, res = response) =>{
     const { name }    = req.params;
     const { nationality } = req.query;
-    const nation = nationality.split('/');
     try {
         
-        const player = await Futbolista.findOne({ include: "Equipo",
-                                where: { [Op.and]: [{name: {[Op.like]: '%'+name+'%'}},{ nationality: {[Op.like]: '%'+nation[0]+'%'} }] }})
+        const player = await Futbolista.findOne({ include: "equipo",
+                                where: { [Op.and]: [{name: {[Op.like]: '%'+name+'%'}},{ nationality: {[Op.like]: '%'+nationality+'%'} }] }})
         
         if(!player){
             return res.json({
@@ -189,7 +189,7 @@ const playerEquipo = async(req, res = response) => {
     const { equipo } = req.query;
 
     try {
-        const playerE = await Futbolista.findOne({include: 'Equipo', where: { 
+        const playerE = await Futbolista.findOne({include: 'equipo', where: { 
             [Op.and]: [{name: {[Op.like]: '%'+name+'%'}}]
         }})
 

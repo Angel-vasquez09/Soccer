@@ -2,7 +2,7 @@ const  { DataTypes } = require('sequelize');
 const    db          = require("../db/conexion");
 const    Equipo      = require("./equipo");
 
-const Futbolista = db.define("Futbolista", {
+const Futbolista = db.define("futbolista", {
 
     name: {
         type: DataTypes.STRING

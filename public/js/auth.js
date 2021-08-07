@@ -17,7 +17,7 @@ formularioLogin.addEventListener("submit", async(e) => {
         "email": email,
         "pass" : pass  
     }
-
+    
     const verificar = await fetch(`${url}auth`, {
         method: 'POST',
         body: JSON.stringify(auth),

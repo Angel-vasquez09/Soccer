@@ -2,7 +2,7 @@ const  { DataTypes } = require('sequelize');
 const    db          = require("../db/conexion");
 
 
-const Admin = db.define("Admin", {
+const Admin = db.define("admin", {
 
     name: {
         type: DataTypes.STRING
