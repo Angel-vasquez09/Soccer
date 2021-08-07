@@ -24,7 +24,11 @@ formularioLogin.addEventListener("submit", async(e) => {
         headers: {'Content-Type': 'application/json'},
     });
 
+    
     const { admin, token } = await verificar.json();
+    if(admin === undefined){
+        document.querySelector("#alerta").classList.remove("d-none")
+    }
     console.log(admin);
     if(token){
         localStorage.setItem('token',token);
